@@ -1,4 +1,4 @@
-# 🚀 SpaceX Data Engineering Pipeline
+# SpaceX Data Engineering Pipeline
 
 This project is a fully containerized Data Engineering pipeline designed to extract, load, transform, and visualize data from the [SpaceX API](https://github.com/r-spacex/SpaceX-API). The pipeline leverages modern cloud-native tools and orchestration to automate the entire workflow daily, from raw API ingestion to business-ready dashboards.
 

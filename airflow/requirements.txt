@@ -1,0 +1,19 @@
+apache-airflow==2.9.0
+
+# Airflow Providers
+apache-airflow-providers-google==10.11.0
+apache-airflow-providers-http==4.7.0
+
+# GCP SDKs
+google-cloud-storage==2.16.0
+google-cloud-bigquery==3.21.0
+
+# API requests
+requests==2.31.0
+
+# Data handling
+pandas==2.2.2
+pyarrow==15.0.2
+
+# Optional (but useful)
+python-dotenv==1.0.1  # for loading .env vars
