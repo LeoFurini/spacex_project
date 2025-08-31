@@ -1,0 +1,39 @@
+apis:
+  - name: api_1
+    base_url: "https://api.spacexdata.com"
+    endpoint: "/v4/launches"
+    auth:
+      type: bearer
+      token_env: API1_TOKEN
+    params:                       # static params to send on each request
+      page_size: 100
+    pagination:
+      enabled: false
+    output:
+      format: parquet             # parquet or csv
+      gcs_raw_prefix: raw/api_1/
+      gcs_processed_prefix: processed/api_1/
+    bigquery:
+      dataset: raw
+      table: api_1
+    incremental:
+      enabled: true
+      last_run_field: updated_at  # field in API to use as since timestamp
+      since_param: since          # name of the param API expects
+
+  - name: api_2
+    base_url: "https://api2.example.com"
+    endpoint: "/items"
+    auth:
+      type: api_key
+      key_env: API2_KEY
+      key_param: apikey
+    output:
+      format: csv
+      gcs_raw_prefix: raw/api_2/
+      gcs_processed_prefix: processed/api_2/
+    bigquery:
+      dataset: raw
+      table: api_2
+    incremental:
+      enabled: false
